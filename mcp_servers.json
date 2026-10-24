@@ -1,0 +1,8 @@
+{
+  "campus-info": {
+    "enabled": true,
+    "transport": "stdio",
+    "command": "python",
+    "args": ["mcp_server.py"]
+  }
+}

@@ -1,0 +1,8 @@
+deepagents==0.7.29
+langchain-openai==1.7.2
+langchain-mcp-adapters==0.3.2
+langgraph-checkpoint-sqlite==3.1.2
+mcp==1.30.0
+streamlit==1.66.0
+python-dotenv==1.2.4
+tzdata==2026.5

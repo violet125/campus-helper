@@ -1,0 +1,96 @@
+/* Minimal whitespace theme. Preserve native icon and code fonts. */
+:root {--ink:#27272a;--muted:#71717a;--line:#e8e8eb;--ui:"Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;}
+.stApp {background:#fff;color:var(--ink)}
+.block-container {max-width:1080px;padding-top:4rem;padding-bottom:5rem}
+[data-testid="stHeader"] {background:rgba(255,255,255,.96)}
+[data-testid="stSidebar"] {background:#fafafa;border-right:1px solid var(--line)}
+.stMarkdown,.stMarkdown p,.stMarkdown li,h1,h2,h3,h4,h5,h6,button,button p,input,textarea,[data-testid="stWidgetLabel"] p,[data-baseweb="select"] {font-family:var(--ui)!important}
+.stMarkdown p,.stMarkdown li {font-size:16px;line-height:1.85}
+h1,h2,h3,h4 {color:var(--ink);font-weight:600!important}
+[data-testid="stSidebar"] h2 {font-size:24px;letter-spacing:-.6px;margin-bottom:4px}
+[data-testid="stSidebar"] h3 {font-size:14px;font-weight:500!important;color:#71717a;margin-top:24px}
+[data-testid="stSidebar"] .stMarkdown p {font-size:14px}
+[data-testid="stCaptionContainer"] p {font-size:13px;line-height:1.8;color:#71717a}
+.hero {padding:20px 0 38px;margin-bottom:26px;border-bottom:1px solid var(--line)}
+.hero small {font-family:var(--ui);font-size:11px;letter-spacing:2.5px;color:#8a8a93}
+.hero-title,.hero h1 {font-family:var(--ui)!important;font-size:42px!important;font-weight:600!important;letter-spacing:-1px;line-height:1.5;margin:20px 0 16px;color:#202024;text-shadow:none}
+.hero p {font-size:17px;line-height:1.9;color:#71717a;margin:0}
+.stButton>button,[data-testid="stFormSubmitButton"]>button,[data-testid="stDownloadButton"]>button {background:white;color:#3f3f46;border:1px solid #dedee3;border-radius:7px;min-height:44px;box-shadow:none;transition:background .15s,border-color .15s}
+button p {font-size:14px!important}
+.stButton>button:hover,[data-testid="stFormSubmitButton"]>button:hover,[data-testid="stDownloadButton"]>button:hover {background:#f5f5f6;border-color:#a1a1aa;color:#18181b}
+[data-testid="stSidebar"] .stButton>button {text-align:left;justify-content:flex-start;background:transparent;border-color:transparent;box-shadow:none}
+[data-testid="stSidebar"] .stButton>button:hover {background:#ededf0}
+button:focus-visible,input:focus-visible,textarea:focus-visible {outline:2px solid #71717a!important;outline-offset:3px}
+[data-baseweb="tab-list"] {gap:28px;border-bottom:1px solid var(--line);margin-bottom:20px}
+[data-baseweb="tab"] {color:#71717a;padding:12px 2px}
+[data-baseweb="tab"][aria-selected="true"] {color:#18181b}
+[data-baseweb="tab-highlight"] {background:#27272a}
+[data-testid="stExpander"],[data-testid="stForm"] {border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:none}
+[data-baseweb="input"],[data-baseweb="textarea"],[data-baseweb="select"]>div {background:#fafafa!important;border-color:#e4e4e7!important;color:#27272a!important}
+input,textarea {font-size:15px!important}
+[data-testid="stChatInput"] {background:#fafafa;border:1px solid #dedee3;border-radius:10px;box-shadow:none}
+[data-testid="stChatInput"] textarea {background:transparent!important}
+[data-testid="stChatMessage"] {background:white;border:0;border-bottom:1px solid #f0f0f2;border-radius:0;padding:24px 12px}
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {background:#f8f8f9;border:0;border-radius:8px}
+code,pre,pre *,[data-testid="stJson"] * {font-family:Consolas,"Microsoft YaHei",monospace!important}
+::selection {background:#e4e4e7;color:#18181b}
+@supports(animation-timeline:scroll()) {@media(prefers-reduced-motion:no-preference){.hero{animation:hero-drift linear both;animation-timeline:scroll(nearest block);animation-range:0px 420px}[data-testid="stChatMessage"]{animation:message-rise linear both;animation-timeline:view();animation-range:entry 0% entry 100%}}}
+@keyframes hero-drift {from{transform:translateY(0)}to{transform:translateY(16px)}}
+@keyframes message-rise {from{transform:translateY(8px);opacity:.8}to{transform:translateY(0);opacity:1}}
+@media(prefers-reduced-motion:reduce){.hero,[data-testid="stChatMessage"]{animation:none!important;transform:none!important}button{transition:none!important}}
+@media(max-width:640px){.block-container{padding-top:2rem;padding-bottom:3rem}.hero{padding:14px 0 26px}.hero-title,.hero h1{font-size:30px!important;letter-spacing:0}.hero p{font-size:15px}[data-baseweb="tab-list"]{gap:12px}}
+
+/* Native pinned composer follows sidebar width and mobile keyboard layout. */
+[data-testid="stBottom"] {background:rgba(255,255,255,.98);padding-bottom:env(safe-area-inset-bottom,0px)}
+[data-testid="stBottom"] [data-testid="stChatInput"] {max-width:100%;box-shadow:0 2px 12px rgba(0,0,0,.03)}
+
+/* Pill composer and a quiet empty-chat welcome. */
+[data-testid="stChatInput"] {border-radius:32px!important;padding:4px 10px!important;background:#fafafa!important}
+[data-testid="stChatInput"] [data-baseweb="textarea"], [data-testid="stChatInput"] textarea {border-radius:24px!important}
+.chat-model-label {font-family:var(--ui);font-size:12px;color:#71717a;letter-spacing:.2px;margin:6px 0 18px}
+.chat-welcome {font-family:var(--ui);font-size:clamp(25px,3vw,38px);font-weight:400;color:#52525b;min-height:48vh;display:flex;align-items:center;justify-content:center;text-align:center;letter-spacing:-.6px}
+
+/* One visible input surface; remove the surrounding composer shell. */
+[data-testid="stBottom"] {border-top:0!important}
+[data-testid="stBottom"] [data-testid="stChatInput"], [data-testid="stChatInput"] {background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+[data-testid="stChatInput"] > div {background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
+[data-testid="stChatInput"] > div > div {position:relative;background:#f7f7f8!important;border:1px solid #e4e4e7!important;border-radius:30px!important;padding:10px 18px 28px!important;box-shadow:none!important}
+[data-testid="stChatInput"] > div > div::after {content:var(--model-label);position:absolute;bottom:9px;left:22px;font-family:var(--ui);font-size:11px;line-height:16px;color:#71717a;max-width:70%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;pointer-events:none}
+[data-testid="stChatInput"] textarea {border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;padding-left:4px!important}
+[data-testid="stChatInput"] > div > div:focus-within {border-color:#a1a1aa!important}
+
+/* Model name removed from composer. */
+[data-testid="stChatInput"] > div > div::after {content:none!important;display:none!important}
+[data-testid="stChatInput"] > div > div {padding:10px 18px!important}
+
+/* Keep the composer visually unchanged while typing. */
+[data-testid="stChatInput"] textarea,
+[data-testid="stChatInput"] textarea:focus,
+[data-testid="stChatInput"] textarea:focus-visible {
+  outline:none!important;outline-offset:0!important;border:0!important;box-shadow:none!important;
+}
+[data-testid="stChatInput"]:focus-within,
+[data-testid="stChatInput"] > div:focus-within {outline:none!important;box-shadow:none!important}
+[data-testid="stChatInput"] > div > div:focus-within {border-color:#e4e4e7!important;outline:none!important;box-shadow:none!important}
+.block-container {padding-bottom:8rem!important}
+
+/* Soft reveal for each newly mounted blank conversation. */
+.chat-welcome {animation:welcome-reveal 1.2s ease-out both}
+@keyframes welcome-reveal {from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* Conversational bubbles, assistant left and user right. */
+[data-testid="stChatMessage"] {width:fit-content!important;max-width:85%;margin:12px auto 18px 0;padding:18px 22px!important;background:#f3f4f6!important;border:0!important;border-radius:20px 20px 20px 5px!important;animation:none!important}
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {margin-left:auto;margin-right:0;background:#e9eef4!important;border-radius:20px 20px 5px 20px!important}
+[data-testid="stChatMessageAvatarUser"],[data-testid="stChatMessageAvatarAssistant"] {display:none!important}
+[data-testid="stChatMessageContent"] {min-width:0;overflow-wrap:anywhere}
+[data-testid="stChatMessageContent"] p {margin-bottom:.5rem}
+@media(max-width:640px){[data-testid="stChatMessage"]{max-width:94%;padding:14px 16px!important}}
+@media(prefers-reduced-motion:reduce){.chat-welcome{animation:none!important;transform:none!important;opacity:1}}
+
+/* Keep the composer bounded by the native main-content column. */
+[data-testid="stBottomBlockContainer"] {max-width:1080px;margin-inline:auto;box-sizing:border-box}
+[data-testid="stChatInput"], [data-testid="stChatInput"] > div, [data-testid="stChatInput"] > div > div {min-width:0;max-width:100%;box-sizing:border-box}
+
+/* Shared horizontal gutters for messages and the native bottom composer.
+   Do not fix stBottom to the viewport: native positioning tracks sidebar resizing. */
+[data-testid="stMainBlockContainer"], [data-testid="stBottomBlockContainer"] {width:100%;max-width:1080px;margin-inline:auto;padding-left:clamp(24px,4vw,64px)!important;padding-right:clamp(24px,4vw,64px)!important;box-sizing:border-box}
+@media(max-width:640px){[data-testid="stMainBlockContainer"],[data-testid="stBottomBlockContainer"]{padding-left:16px!important;padding-right:16px!important}body:has([data-testid="stSidebar"][data-collapsed="false"]) [data-testid="stBottom"]{visibility:hidden;pointer-events:none}}
