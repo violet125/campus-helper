@@ -16,7 +16,7 @@
 | 多轮和会话保存 | `checkpoints.db` 保存模型上下文，`sessions.db` 保存界面记录 |
 | 明确产出文件 | 按模板写入 `workspace/*.md`，网页预览与下载 |
 
-加分能力：`researcher`/`critic` 子代理、Open-Meteo 联网天气查询、作业截止日期倒数与本地清单、`AGENTS.md` 长期记忆、文件系统隔离、工具事件与文字流式展示、Windows 启动脚本。
+加分能力：`researcher`/`critic` 子代理、Open-Meteo 联网天气查询、`AGENTS.md` 长期记忆、文件系统隔离、工具事件与文字流式展示、Windows 启动脚本。
 
 ## 2. 环境与安装（Windows PowerShell）
 
